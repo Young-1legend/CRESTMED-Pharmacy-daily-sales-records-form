@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import  Sidebar  from '../components/Header';
+import  Sidebar  from './layout/Sidebar';
 import Toolbar  from './layout/Layout';
 import Header from '../components/Header';
 import { cn } from '@/lib/utils';
