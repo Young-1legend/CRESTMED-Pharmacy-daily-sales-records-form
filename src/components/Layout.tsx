@@ -32,7 +32,7 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
       <div className="flex flex-1 overflow-hidden">
-        <Sidebar isOpen={isSidebarOpen} onClose={() => setIsMobile && setIsSidebarOpen(false)} />
+        <Sidebar isOpen={isSidebarOpen}onClose={() => isMobile && setIsSidebarOpen(false)} />
         <main className={cn(
           "flex-1 transition-all duration-300 ease-in-out flex flex-col overflow-hidden",
           isSidebarOpen && !isMobile ? "ml-64" : "ml-0"

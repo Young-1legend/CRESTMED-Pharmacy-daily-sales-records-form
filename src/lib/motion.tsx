@@ -18,7 +18,6 @@ type MotionProps = {
 export const motion = {
   div: React.forwardRef<HTMLDivElement, MotionProps>(
     ({ 
-      initial, 
       animate, 
       transition = { duration: 0.3 }, 
       whileHover,
@@ -28,7 +27,6 @@ export const motion = {
       children,
       ...props 
     }, ref) => {
-      const initialRef = React.useRef(initial);
       const [isHovering, setIsHovering] = React.useState(false);
       const [isTapping, setIsTapping] = React.useState(false);
       
