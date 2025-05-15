@@ -29,6 +29,7 @@ interface FinanceContextType {
   profitMargin: number;
   setProfitMargin: (margin: number) => void;
   expenses: ExpenseItem[];
+  setExpenses: React.Dispatch<React.SetStateAction<ExpenseItem[]>>; // Added this line
   handleExpenseChange: (id: number, amount: number) => void;
   totalSales: number;
   grossProfit: number;
@@ -36,7 +37,6 @@ interface FinanceContextType {
   netProfit: number;
   resetForm: () => void;
   printForm: () => void;
-
 }
 
 
@@ -168,6 +168,7 @@ const handleExpenseChange = (id: number, amount: number) => {
       profitMargin,
       setProfitMargin,
       expenses,
+      setExpenses, // Added this line
       handleExpenseChange,
       totalSales,
       grossProfit,
