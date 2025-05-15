@@ -11,7 +11,7 @@ import {
   Settings 
 } from 'lucide-react';
 import { useTheme } from '@/components/theme-provider';
-import { usePDF } from '@/context/PDFContext';
+import { usePDF } from '../context/PDFContext';
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -24,7 +24,7 @@ interface HeaderProps {
 }
 
 export default function Header({ toggleSidebar }: HeaderProps) {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   const { documentName, setDocumentName, saveDocument } = usePDF();
   const [isEditingName, setIsEditingName] = useState(false);
   const [nameValue, setNameValue] = useState(documentName);
