@@ -51,7 +51,6 @@ export default function SalesRecord() {
           </TableHeader>
           <TableBody>
             {dailySales.map((sale) => {
-              // Find the matching expenditure for this date
               const expenditure = dailyExpenditures.find(exp => exp.date === sale.date) || { date: sale.date, amount: 0 };
               
               return (
