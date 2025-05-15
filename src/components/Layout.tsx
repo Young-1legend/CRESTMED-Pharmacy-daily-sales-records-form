@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import  Sidebar  from './layout/Layout';
+import  Sidebar  from '../components/Header';
 import Toolbar  from './layout/Layout';
-import Header from '@/components/Header';
+import Header from '../components/Header';
 import { cn } from '@/lib/utils';
 
 interface LayoutProps {
