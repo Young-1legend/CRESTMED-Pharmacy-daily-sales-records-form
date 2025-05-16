@@ -26,7 +26,7 @@ export default function Footer() {
           </div>
           
           <div className="text-center">
-            <p className="text-sm text-gray-500">© 2025 CrestMed Pharmacy. All rights reserved.</p>
+            <p className="text-sm text-gray-500">© 2025 CRESTMED Pharmacy. All rights reserved.</p>
           </div>
           
           <div className="hidden sm:block">

@@ -168,7 +168,7 @@ const handleExpenseChange = (id: number, amount: number) => {
       profitMargin,
       setProfitMargin,
       expenses,
-      setExpenses, // Added this line
+      setExpenses, 
       handleExpenseChange,
       totalSales,
       grossProfit,
