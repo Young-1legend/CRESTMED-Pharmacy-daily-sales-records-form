@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
           
           <div className="hidden sm:block">
-            <p className="text-xs text-gray-400">Version 1.0.0</p>
+            <p className="text-xs text-gray-400">Version 1.0.1</p>
           </div>
         </div>
       </div>
