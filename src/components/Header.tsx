@@ -3,29 +3,16 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { 
   Menu, 
-  Sun, 
-  Moon, 
-  Save, 
-  Download, 
-  Share2, 
-  Settings 
 } from 'lucide-react';
-import { useTheme } from '@/components/theme-provider';
 import { usePDF } from '../context/PDFContext';
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
+
 
 interface HeaderProps {
   toggleSidebar: () => void;
 }
 
 export default function Header({ toggleSidebar }: HeaderProps) {
-  const { setTheme } = useTheme();
-  const { documentName, setDocumentName, saveDocument } = usePDF();
+  const { documentName, setDocumentName } = usePDF();
   const [isEditingName, setIsEditingName] = useState(false);
   const [nameValue, setNameValue] = useState(documentName);
 
@@ -72,45 +59,7 @@ export default function Header({ toggleSidebar }: HeaderProps) {
         </div>
       </div>
       
-      <div className="flex items-center space-x-2">
-        <Button 
-          variant="ghost" 
-          size="sm" 
-          className="text-muted-foreground" 
-          onClick={saveDocument}
-        >
-          <Save className="h-4 w-4 mr-1" />
-          <span className="hidden sm:inline">Save</span>
-        </Button>
-        
-        <Button variant="ghost" size="sm" className="text-muted-foreground">
-          <Download className="h-4 w-4 mr-1" />
-          <span className="hidden sm:inline">Export</span>
-        </Button>
-        
-        <Button variant="ghost" size="sm" className="text-muted-foreground">
-          <Share2 className="h-4 w-4 mr-1" />
-          <span className="hidden sm:inline">Share</span>
-        </Button>
-        
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon">
-              <Settings className="h-5 w-5" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setTheme("light")}>
-              <Sun className="h-4 w-4 mr-2" />
-              Light
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("dark")}>
-              <Moon className="h-4 w-4 mr-2" />
-              Dark
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
+     
     </header>
   );
 }

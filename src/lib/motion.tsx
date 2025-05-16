@@ -14,7 +14,6 @@ type MotionProps = {
   [key: string]: any;
 };
 
-// Create a simple motion div that applies animations using CSS transitions
 export const motion = {
   div: React.forwardRef<HTMLDivElement, MotionProps>(
     ({ 
@@ -30,7 +29,6 @@ export const motion = {
       const [isHovering, setIsHovering] = React.useState(false);
       const [isTapping, setIsTapping] = React.useState(false);
       
-      // Convert motion properties to CSS styles
       const getStyles = () => {
         const transitionStr = `all ${transition.duration}s ${transition.ease || 'ease'} ${transition.delay || 0}s`;
         
@@ -39,17 +37,14 @@ export const motion = {
           transition: transitionStr,
         };
         
-        // Apply animate styles
         if (animate) {
           combinedStyles = { ...combinedStyles, ...animate };
         }
         
-        // Apply hover styles
         if (isHovering && whileHover) {
           combinedStyles = { ...combinedStyles, ...whileHover };
         }
         
-        // Apply tap styles
         if (isTapping && whileTap) {
           combinedStyles = { ...combinedStyles, ...whileTap };
         }
